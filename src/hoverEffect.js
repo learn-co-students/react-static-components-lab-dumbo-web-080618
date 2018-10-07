@@ -3,12 +3,12 @@
 const rippleSettings = {
   maxSize: 100,
   animationSpeed: 2,
-  strokeColor: [45, 45, 45],
+  strokeColor: [45, 45, 45]
 };
 
 const canvasSettings = {
   blur: 8,
-  ratio: 1,
+  ratio: 1
 };
 
 function Coords(x, y) {
@@ -43,25 +43,22 @@ Ripple.prototype = {
       ${Math.floor(rippleSettings.strokeColor[2])},
       ${this.opacity})`;
   },
-  
+
   draw: function draw() {
     this.ctx.beginPath();
     this.ctx.strokeStyle = this.strokeColor;
-    this.ctx.arc(this.position.x, this.position.y - height*2, this.circleSize, 0,
-      2 * Math.PI);
+    this.ctx.arc(this.position.x, this.position.y - height * 2, this.circleSize, 0, 2 * Math.PI);
     this.ctx.stroke();
   },
-  
+
   setStatus: function setStatus(status) {
     this.status = status;
-  },
+  }
 };
 
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 const ripples = [];
-
-
 
 const rippleStartStatus = 'start';
 
